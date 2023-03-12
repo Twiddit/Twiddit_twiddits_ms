@@ -45,8 +45,8 @@ export class DislikeService {
     return dislike.length;
   }
 
-  async getDislikesOfComment(commentid: object) {
-    const dislike = await this.dislikeModel.find({ commentId: commentid });
+  async getDislikesOfReply(replyid: object) {
+    const dislike = await this.dislikeModel.find({ replyId: replyid });
     return dislike.length;
   }
 }

@@ -6,5 +6,5 @@ export interface Dislike extends Document {
   userId: number;
   creationDate: Date;
   twidditId?: object;
-  commentId?: object;
+  replyId?: object;
 }

@@ -4,5 +4,5 @@ export class CreateLikeDTO {
   userId: number;
   creationDate: Date;
   twidditId?: object;
-  commentId?: object;
+  replyId?: object;
 }

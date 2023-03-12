@@ -45,8 +45,8 @@ export class LikeService {
     return like.length;
   }
 
-  async getLikesOfComment(commentid: object) {
-    const like = await this.likeModel.find({ commentId: commentid });
+  async getLikesOfReply(replyid: object) {
+    const like = await this.likeModel.find({ replyId: replyid });
     return like.length;
   }
 }

@@ -25,11 +25,10 @@ export class DislikeController {
     return numberOfTwidditDislike;
   }
 
-  @Get('/dislikes-comment/:commentId')
-  async getDislikesOfComment(@Param('commentId') commentId: object) {
-    const numberOfCommentDislike =
-      await this.dislikeService.getDislikesOfComment(commentId);
-    return numberOfCommentDislike;
+  @Get('/dislikes-reply/:replyId')
+  async getDislikesOfReply(@Param('replyId') replyId: object) {
+    const numberOfReplyDislike = await this.dislikeService.getDislikesOfReply(replyId);
+    return numberOfReplyDislike;
   }
 
   @Post('/')

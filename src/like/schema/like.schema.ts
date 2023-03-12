@@ -13,5 +13,5 @@ export const LikeSchema = new Schema({
     required: true,
   },
   twidditId: Object,
-  commentId: Object,
+  replyId: Object,
 });

@@ -13,5 +13,5 @@ export const DislikeSchema = new Schema({
     required: true,
   },
   twidditId: Object,
-  commentId: Object,
+  replyId: Object,
 });

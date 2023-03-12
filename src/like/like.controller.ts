@@ -26,12 +26,10 @@ export class LikeController {
     return numberOfTwidditLikes;
   }
 
-  @Get('/likes-comment/:commentId')
-  async getLikesOfComment(@Param('commentId') commentId: object) {
-    const numberOfCommentLikes = await this.likeService.getLikesOfComment(
-      commentId,
-    );
-    return numberOfCommentLikes;
+  @Get('/likes-reply/:replyId')
+  async getLikesOfReply(@Param('replyId') replyId: object) {
+    const numberOfReplyLikes = await this.likeService.getLikesOfReply(replyId);
+    return numberOfReplyLikes;
   }
 
   @Post('/')

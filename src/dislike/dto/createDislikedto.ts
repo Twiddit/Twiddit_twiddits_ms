@@ -4,5 +4,5 @@ export class CreateDislikeDTO {
   userId: number;
   creationDate: Date;
   twidditId?: object;
-  commentId?: object;
+  replyId?: object;
 }
