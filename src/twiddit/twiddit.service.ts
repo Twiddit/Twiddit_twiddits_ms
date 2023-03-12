@@ -1,6 +1,6 @@
 import { HttpException, Injectable, HttpStatus } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model, StringExpressionOperatorReturningObject } from 'mongoose';
+import { Model } from 'mongoose';
 import { Twiddit } from './interfaces/twiddit.interface';
 import { CreateTwidditDTO } from './dto/createTwiddit.dto';
 import { UpdateTwidditDTO } from './dto/updateTwiddit.dto';
