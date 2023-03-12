@@ -5,6 +5,7 @@ import { TwidditModule } from './twiddit/twiddit.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { LikeModule } from './like/like.module';
 import { DislikeModule } from './dislike/dislike.module';
+import { ReplyModule } from './reply/reply.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { DislikeModule } from './dislike/dislike.module';
     MongooseModule.forRoot('mongodb://127.0.0.1:27020/twiddits-microservice'),
     LikeModule,
     DislikeModule,
+    ReplyModule,
   ],
   controllers: [AppController],
   providers: [AppService],
