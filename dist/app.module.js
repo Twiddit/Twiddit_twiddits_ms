@@ -21,7 +21,7 @@ AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             twiddit_module_1.TwidditModule,
-            mongoose_1.MongooseModule.forRoot('mongodb://127.0.0.1:27020/twiddits-microservice'),
+            mongoose_1.MongooseModule.forRoot('mongodb://twiddits:twidditsPassword@twiddits_db:27017/twiddits_microservice_bd?authSource=admin'),
             like_module_1.LikeModule,
             dislike_module_1.DislikeModule,
             reply_module_1.ReplyModule,

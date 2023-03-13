@@ -8,12 +8,46 @@
 
 Microservicio de Twiddit encargado de gestionar los twiddits, retwiddits, replies, likes y dislikes.
 
-## Installation
+Hay 4 endpoint principales:
+
+http://localhost:8080/twiddit
+  -> Get     /
+  -> Get     /:id 
+  -> Post    / & Json en body
+  -> Put     /:id & Json en body
+  -> Delete  /id
+http://localhost:8080/like
+  -> Get     /
+  -> Get     /:id 
+  -> Post    / & Json en body
+  -> Delete  /id
+http://localhost:8080/dislikes
+  -> Get     /
+  -> Get     /:id 
+  -> Post    / & Json en body
+  -> Delete  /id
+http://localhost:8080/reply
+  -> Get     /
+  -> Get     /:id 
+  -> Post    / & Json en body
+  -> Put     /:id & Json en body
+  -> Delete  /id
+
+## Docker Installation
 
 ```bash
-$ npm install
+$ docker compose up
 ```
 
+## Local Installation
+
+```bash
+$ npm install 
+```
+or if error
+```bash
+$ npm install --force
+```
 ## Running the app
 
 ```bash
