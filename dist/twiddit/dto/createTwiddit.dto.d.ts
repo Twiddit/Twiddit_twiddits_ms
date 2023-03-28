@@ -1,6 +1,6 @@
 export declare class CreateTwidditDTO {
     userId: number;
-    comunnidditsId?: object;
+    communidditsId?: object;
     retwidditId?: object;
     text?: string;
     creationDate: Date;

@@ -30,8 +30,14 @@ export declare class DislikeController {
     constructor(dislikeService: DislikeService);
     getDislikes(): Promise<import("./interfaces/dislike.interface").Dislike[]>;
     getDislike(dislikeId: string): Promise<import("./interfaces/dislike.interface").Dislike>;
-    getDislikesOfTwiddit(twidditId: object): Promise<number>;
-    getDislikesOfReply(replyId: object): Promise<number>;
+    getDislikesOfTwiddit(twidditId: object): Promise<(import("mongoose").Document<unknown, {}, import("./interfaces/dislike.interface").Dislike> & Omit<import("./interfaces/dislike.interface").Dislike & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberOfDislikesOfTwiddit(twidditId: object): Promise<number>;
+    getDislikesOfReply(replyId: object): Promise<(import("mongoose").Document<unknown, {}, import("./interfaces/dislike.interface").Dislike> & Omit<import("./interfaces/dislike.interface").Dislike & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberOfDislikesOfReply(replyId: object): Promise<number>;
     createDislike(createDislikeDTO: CreateDislikeDTO): Promise<import("mongoose").Document<unknown, {}, import("./interfaces/dislike.interface").Dislike> & Omit<import("./interfaces/dislike.interface").Dislike & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;

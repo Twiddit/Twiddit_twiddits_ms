@@ -43,12 +43,20 @@ let LikeService = class LikeService {
         return like;
     }
     async getLikesOfTwiddit(twidditid) {
-        const like = await this.likeModel.find({ twidditId: twidditid });
-        return like.length;
+        const likes = await this.likeModel.find({ twidditId: twidditid });
+        return likes;
+    }
+    async getNumberOfLikesOfTwiddit(twidditid) {
+        const likes = await this.likeModel.find({ twidditId: twidditid });
+        return likes.length;
     }
     async getLikesOfReply(replyid) {
-        const like = await this.likeModel.find({ replyId: replyid });
-        return like.length;
+        const likes = await this.likeModel.find({ replyId: replyid });
+        return likes;
+    }
+    async getNumberOfLikesOfReply(replyid) {
+        const likes = await this.likeModel.find({ replyId: replyid });
+        return likes.length;
     }
 };
 LikeService = __decorate([

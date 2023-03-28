@@ -49,6 +49,14 @@ let ReplyService = class ReplyService {
         }
         return await this.replyModel.findByIdAndUpdate(replyId, updateReplyDTO);
     }
+    async getRepliesOfTwiddit(twidditid) {
+        const replies = await this.replyModel.find({ twidditId: twidditid });
+        return replies;
+    }
+    async getRepliesOfReply(replyid) {
+        const replies = await this.replyModel.find({ threadId: replyid });
+        return replies;
+    }
 };
 ReplyService = __decorate([
     (0, common_1.Injectable)(),

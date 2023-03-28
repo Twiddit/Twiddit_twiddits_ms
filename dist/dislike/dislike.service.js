@@ -44,11 +44,11 @@ let DislikeService = class DislikeService {
     }
     async getDislikesOfTwiddit(twidditid) {
         const dislike = await this.dislikeModel.find({ twidditId: twidditid });
-        return dislike.length;
+        return dislike;
     }
     async getDislikesOfReply(replyid) {
         const dislike = await this.dislikeModel.find({ replyId: replyid });
-        return dislike.length;
+        return dislike;
     }
 };
 DislikeService = __decorate([

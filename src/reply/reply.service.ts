@@ -51,4 +51,14 @@ export class ReplyService {
     }
     return await this.replyModel.findByIdAndUpdate(replyId, updateReplyDTO);
   }
+
+  async getRepliesOfTwiddit(twidditid: object) {
+    const replies = await this.replyModel.find({ twidditId: twidditid });
+    return replies;
+  }
+
+  async getRepliesOfReply(replyid: object) {
+    const replies = await this.replyModel.find({ threadId: replyid });
+    return replies;
+  }
 }

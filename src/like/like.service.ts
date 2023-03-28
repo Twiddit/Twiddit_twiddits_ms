@@ -41,12 +41,22 @@ export class LikeService {
   }
 
   async getLikesOfTwiddit(twidditid: object) {
-    const like = await this.likeModel.find({ twidditId: twidditid });
-    return like.length;
+    const likes = await this.likeModel.find({ twidditId: twidditid });
+    return likes;
+  }
+
+  async getNumberOfLikesOfTwiddit(twidditid: object) {
+    const likes = await this.likeModel.find({ twidditId: twidditid });
+    return likes.length;
   }
 
   async getLikesOfReply(replyid: object) {
-    const like = await this.likeModel.find({ replyId: replyid });
-    return like.length;
+    const likes = await this.likeModel.find({ replyId: replyid });
+    return likes;
+  }
+
+  async getNumberOfLikesOfReply(replyid: object) {
+    const likes = await this.likeModel.find({ replyId: replyid });
+    return likes.length;
   }
 }

@@ -30,8 +30,14 @@ export declare class LikeController {
     constructor(likeService: LikeService);
     getLikes(): Promise<import("./interfaces/like.interface").Like[]>;
     getLike(likeId: string): Promise<import("./interfaces/like.interface").Like>;
-    getLikesOfTwiddit(twidditId: object): Promise<number>;
-    getLikesOfReply(replyId: object): Promise<number>;
+    getLikesOfTwiddit(twidditId: object): Promise<(import("mongoose").Document<unknown, {}, import("./interfaces/like.interface").Like> & Omit<import("./interfaces/like.interface").Like & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberOfLikesOfTwiddit(twidditId: object): Promise<number>;
+    getLikesOfReply(replyId: object): Promise<(import("mongoose").Document<unknown, {}, import("./interfaces/like.interface").Like> & Omit<import("./interfaces/like.interface").Like & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberLikesOfReply(replyId: object): Promise<number>;
     createLike(createLikeDTO: CreateLikeDTO): Promise<import("mongoose").Document<unknown, {}, import("./interfaces/like.interface").Like> & Omit<import("./interfaces/like.interface").Like & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;

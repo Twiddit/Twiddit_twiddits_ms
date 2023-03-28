@@ -20,15 +20,28 @@ export class LikeController {
 
   @Get('/likes-twiddit/:twidditId')
   async getLikesOfTwiddit(@Param('twidditId') twidditId: object) {
-    const numberOfTwidditLikes = await this.likeService.getLikesOfTwiddit(
-      twidditId,
-    );
+    const twidditLikes = await this.likeService.getLikesOfTwiddit(twidditId);
+    return twidditLikes;
+  }
+
+  @Get('/number-likes-twiddit/:twidditId')
+  async getNumberOfLikesOfTwiddit(@Param('twidditId') twidditId: object) {
+    const numberOfTwidditLikes =
+      await this.likeService.getNumberOfLikesOfTwiddit(twidditId);
     return numberOfTwidditLikes;
   }
 
   @Get('/likes-reply/:replyId')
   async getLikesOfReply(@Param('replyId') replyId: object) {
-    const numberOfReplyLikes = await this.likeService.getLikesOfReply(replyId);
+    const replyLikes = await this.likeService.getLikesOfReply(replyId);
+    return replyLikes;
+  }
+
+  @Get('/number-likes-reply/:replyId')
+  async getNumberLikesOfReply(@Param('replyId') replyId: object) {
+    const numberOfReplyLikes = await this.likeService.getNumberOfLikesOfReply(
+      replyId,
+    );
     return numberOfReplyLikes;
   }
 

@@ -27,7 +27,7 @@ export declare const TwidditsSchema: Schema<any, import("mongoose").Model<any, a
     userId: number;
     creationDate: Date;
     tags: any[];
-    comunnidditsId?: any;
+    communidditsId?: any;
     retwidditId?: any;
     text?: string;
     imageURL1?: string;
@@ -39,7 +39,7 @@ export declare const TwidditsSchema: Schema<any, import("mongoose").Model<any, a
     userId: number;
     creationDate: Date;
     tags: any[];
-    comunnidditsId?: any;
+    communidditsId?: any;
     retwidditId?: any;
     text?: string;
     imageURL1?: string;
@@ -51,7 +51,7 @@ export declare const TwidditsSchema: Schema<any, import("mongoose").Model<any, a
     userId: number;
     creationDate: Date;
     tags: any[];
-    comunnidditsId?: any;
+    communidditsId?: any;
     retwidditId?: any;
     text?: string;
     imageURL1?: string;

@@ -36,6 +36,10 @@ export declare class DislikeService {
     }, never>>;
     getDislikes(): Promise<Dislike[]>;
     getDislike(dislikeId: string): Promise<Dislike>;
-    getDislikesOfTwiddit(twidditid: object): Promise<number>;
-    getDislikesOfReply(replyid: object): Promise<number>;
+    getDislikesOfTwiddit(twidditid: object): Promise<(import("mongoose").Document<unknown, {}, Dislike> & Omit<Dislike & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getDislikesOfReply(replyid: object): Promise<(import("mongoose").Document<unknown, {}, Dislike> & Omit<Dislike & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
 }

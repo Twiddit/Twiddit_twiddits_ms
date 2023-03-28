@@ -2,7 +2,7 @@
 
 export class UpdateTwidditDTO {
   userId?: number;
-  comunnidditsId?: object;
+  communidditsId?: object;
   retwidditId?: object;
   text?: string;
   creationDate?: Date;

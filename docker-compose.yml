@@ -1,23 +1,9 @@
 version: "3.9"
 services:
-  twiddits_microservice:
+  twiddits_ms:
     build:
       context: .
     ports:
       - "8080:8080"
-    links:
-      - twiddits_db
     volumes:
       - .:/usr/src/app
-  twiddits_db:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=twiddits
-      - MONGO_INITDB_ROOT_PASSWORD=twidditsPassword
-    volumes:
-      - mongo-data:/data/db
-
-volumes:
-  mongo-data:

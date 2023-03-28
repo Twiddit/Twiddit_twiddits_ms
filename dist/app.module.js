@@ -15,16 +15,22 @@ const mongoose_1 = require("@nestjs/mongoose");
 const like_module_1 = require("./like/like.module");
 const dislike_module_1 = require("./dislike/dislike.module");
 const reply_module_1 = require("./reply/reply.module");
+const config_1 = require("@nestjs/config");
+const info_twiddit_module_1 = require("./info-twiddit/info-twiddit.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
+            mongoose_1.MongooseModule.forRoot('mongodb+srv://twiddits:hQ65ugUrX4SbLo5U@twiddits.dwb0sl7.mongodb.net/Twiddit_twiddits_db?retryWrites=true&w=majority'),
             twiddit_module_1.TwidditModule,
-            mongoose_1.MongooseModule.forRoot('mongodb://twiddits:twidditsPassword@twiddits_db:27017/twiddits_microservice_bd?authSource=admin'),
             like_module_1.LikeModule,
             dislike_module_1.DislikeModule,
             reply_module_1.ReplyModule,
+            info_twiddit_module_1.InfoTwidditModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

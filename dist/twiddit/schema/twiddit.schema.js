@@ -7,7 +7,7 @@ exports.TwidditsSchema = new mongoose_1.Schema({
         type: Number,
         required: true,
     },
-    comunnidditsId: Object,
+    communidditsId: Object,
     retwidditId: Object,
     text: String,
     creationDate: {

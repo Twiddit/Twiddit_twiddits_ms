@@ -29,12 +29,20 @@ let DislikeController = class DislikeController {
         return dislike;
     }
     async getDislikesOfTwiddit(twidditId) {
-        const numberOfTwidditDislike = await this.dislikeService.getDislikesOfTwiddit(twidditId);
-        return numberOfTwidditDislike;
+        const twidditDislike = await this.dislikeService.getDislikesOfTwiddit(twidditId);
+        return twidditDislike;
+    }
+    async getNumberOfDislikesOfTwiddit(twidditId) {
+        const twidditDislike = await this.dislikeService.getDislikesOfTwiddit(twidditId);
+        return twidditDislike.length;
     }
     async getDislikesOfReply(replyId) {
-        const numberOfReplyDislike = await this.dislikeService.getDislikesOfReply(replyId);
-        return numberOfReplyDislike;
+        const replyDislike = await this.dislikeService.getDislikesOfReply(replyId);
+        return replyDislike;
+    }
+    async getNumberOfDislikesOfReply(replyId) {
+        const replyDislike = await this.dislikeService.getDislikesOfReply(replyId);
+        return replyDislike.length;
     }
     async createDislike(createDislikeDTO) {
         const dislikeCreated = await this.dislikeService.createDislike(createDislikeDTO);
@@ -66,12 +74,26 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], DislikeController.prototype, "getDislikesOfTwiddit", null);
 __decorate([
+    (0, common_1.Get)('/number-dislikes-twiddit/:twidditId'),
+    __param(0, (0, common_1.Param)('twidditId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], DislikeController.prototype, "getNumberOfDislikesOfTwiddit", null);
+__decorate([
     (0, common_1.Get)('/dislikes-reply/:replyId'),
     __param(0, (0, common_1.Param)('replyId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], DislikeController.prototype, "getDislikesOfReply", null);
+__decorate([
+    (0, common_1.Get)('/number-dislikes-reply/:replyId'),
+    __param(0, (0, common_1.Param)('replyId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], DislikeController.prototype, "getNumberOfDislikesOfReply", null);
 __decorate([
     (0, common_1.Post)('/'),
     __param(0, (0, common_1.Body)()),

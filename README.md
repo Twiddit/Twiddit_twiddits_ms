@@ -36,7 +36,8 @@ http://localhost:8080/reply
 ## Docker Installation
 
 ```bash
-$ docker compose up
+$ docker build -t twiddits_ms .
+$ docker run -p 8080:8080 twiddits_ms 
 ```
 
 ## Local Installation

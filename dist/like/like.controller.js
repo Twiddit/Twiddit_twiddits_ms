@@ -29,11 +29,19 @@ let LikeController = class LikeController {
         return like;
     }
     async getLikesOfTwiddit(twidditId) {
-        const numberOfTwidditLikes = await this.likeService.getLikesOfTwiddit(twidditId);
+        const twidditLikes = await this.likeService.getLikesOfTwiddit(twidditId);
+        return twidditLikes;
+    }
+    async getNumberOfLikesOfTwiddit(twidditId) {
+        const numberOfTwidditLikes = await this.likeService.getNumberOfLikesOfTwiddit(twidditId);
         return numberOfTwidditLikes;
     }
     async getLikesOfReply(replyId) {
-        const numberOfReplyLikes = await this.likeService.getLikesOfReply(replyId);
+        const replyLikes = await this.likeService.getLikesOfReply(replyId);
+        return replyLikes;
+    }
+    async getNumberLikesOfReply(replyId) {
+        const numberOfReplyLikes = await this.likeService.getNumberOfLikesOfReply(replyId);
         return numberOfReplyLikes;
     }
     async createLike(createLikeDTO) {
@@ -66,12 +74,26 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], LikeController.prototype, "getLikesOfTwiddit", null);
 __decorate([
+    (0, common_1.Get)('/number-likes-twiddit/:twidditId'),
+    __param(0, (0, common_1.Param)('twidditId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], LikeController.prototype, "getNumberOfLikesOfTwiddit", null);
+__decorate([
     (0, common_1.Get)('/likes-reply/:replyId'),
     __param(0, (0, common_1.Param)('replyId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], LikeController.prototype, "getLikesOfReply", null);
+__decorate([
+    (0, common_1.Get)('/number-likes-reply/:replyId'),
+    __param(0, (0, common_1.Param)('replyId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], LikeController.prototype, "getNumberLikesOfReply", null);
 __decorate([
     (0, common_1.Post)('/'),
     __param(0, (0, common_1.Body)()),

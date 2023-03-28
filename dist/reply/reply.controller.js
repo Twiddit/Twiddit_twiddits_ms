@@ -29,6 +29,22 @@ let ReplyController = class ReplyController {
         const reply = await this.replyService.getReply(replyId);
         return reply;
     }
+    async getRepliesOfTwiddit(twidditId) {
+        const replies = await this.replyService.getRepliesOfTwiddit(twidditId);
+        return replies;
+    }
+    async getNumberRepliesOfTwiddit(twidditId) {
+        const replies = await this.replyService.getRepliesOfTwiddit(twidditId);
+        return replies.length;
+    }
+    async getRepliesOfReply(replyId) {
+        const replies = await this.replyService.getRepliesOfReply(replyId);
+        return replies;
+    }
+    async getNumberRepliesOfReply(replyId) {
+        const replies = await this.replyService.getRepliesOfReply(replyId);
+        return replies.length;
+    }
     async createReply(createReplyDTO) {
         const replyCreated = await this.replyService.createReply(createReplyDTO);
         return replyCreated;
@@ -55,6 +71,34 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ReplyController.prototype, "getReply", null);
+__decorate([
+    (0, common_1.Get)('/replies-twiddit/:twidditId'),
+    __param(0, (0, common_1.Param)('twidditId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ReplyController.prototype, "getRepliesOfTwiddit", null);
+__decorate([
+    (0, common_1.Get)('/number-replies-twiddit/:twidditId'),
+    __param(0, (0, common_1.Param)('twidditId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ReplyController.prototype, "getNumberRepliesOfTwiddit", null);
+__decorate([
+    (0, common_1.Get)('/replies-reply/:replyId'),
+    __param(0, (0, common_1.Param)('replyId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ReplyController.prototype, "getRepliesOfReply", null);
+__decorate([
+    (0, common_1.Get)('/number-replies-reply/:replyId'),
+    __param(0, (0, common_1.Param)('replyId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], ReplyController.prototype, "getNumberRepliesOfReply", null);
 __decorate([
     (0, common_1.Post)('/'),
     __param(0, (0, common_1.Body)()),

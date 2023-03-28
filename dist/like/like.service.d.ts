@@ -36,6 +36,12 @@ export declare class LikeService {
     }, never>>;
     getLikes(): Promise<Like[]>;
     getLike(likeId: string): Promise<Like>;
-    getLikesOfTwiddit(twidditid: object): Promise<number>;
-    getLikesOfReply(replyid: object): Promise<number>;
+    getLikesOfTwiddit(twidditid: object): Promise<(import("mongoose").Document<unknown, {}, Like> & Omit<Like & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberOfLikesOfTwiddit(twidditid: object): Promise<number>;
+    getLikesOfReply(replyid: object): Promise<(import("mongoose").Document<unknown, {}, Like> & Omit<Like & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberOfLikesOfReply(replyid: object): Promise<number>;
 }

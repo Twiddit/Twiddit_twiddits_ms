@@ -20,15 +20,30 @@ export class DislikeController {
 
   @Get('/dislikes-twiddit/:twidditId')
   async getDislikesOfTwiddit(@Param('twidditId') twidditId: object) {
-    const numberOfTwidditDislike =
-      await this.dislikeService.getDislikesOfTwiddit(twidditId);
-    return numberOfTwidditDislike;
+    const twidditDislike = await this.dislikeService.getDislikesOfTwiddit(
+      twidditId,
+    );
+    return twidditDislike;
+  }
+
+  @Get('/number-dislikes-twiddit/:twidditId')
+  async getNumberOfDislikesOfTwiddit(@Param('twidditId') twidditId: object) {
+    const twidditDislike = await this.dislikeService.getDislikesOfTwiddit(
+      twidditId,
+    );
+    return twidditDislike.length;
   }
 
   @Get('/dislikes-reply/:replyId')
   async getDislikesOfReply(@Param('replyId') replyId: object) {
-    const numberOfReplyDislike = await this.dislikeService.getDislikesOfReply(replyId);
-    return numberOfReplyDislike;
+    const replyDislike = await this.dislikeService.getDislikesOfReply(replyId);
+    return replyDislike;
+  }
+
+  @Get('/number-dislikes-reply/:replyId')
+  async getNumberOfDislikesOfReply(@Param('replyId') replyId: object) {
+    const replyDislike = await this.dislikeService.getDislikesOfReply(replyId);
+    return replyDislike.length;
   }
 
   @Post('/')

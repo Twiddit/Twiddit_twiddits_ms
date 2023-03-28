@@ -42,11 +42,11 @@ export class DislikeService {
 
   async getDislikesOfTwiddit(twidditid: object) {
     const dislike = await this.dislikeModel.find({ twidditId: twidditid });
-    return dislike.length;
+    return dislike;
   }
 
   async getDislikesOfReply(replyid: object) {
     const dislike = await this.dislikeModel.find({ replyId: replyid });
-    return dislike.length;
+    return dislike;
   }
 }

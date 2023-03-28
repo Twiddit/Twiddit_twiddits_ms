@@ -27,6 +27,30 @@ export class ReplyController {
     return reply;
   }
 
+  @Get('/replies-twiddit/:twidditId')
+  async getRepliesOfTwiddit(@Param('twidditId') twidditId: object) {
+    const replies = await this.replyService.getRepliesOfTwiddit(twidditId);
+    return replies;
+  }
+
+  @Get('/number-replies-twiddit/:twidditId')
+  async getNumberRepliesOfTwiddit(@Param('twidditId') twidditId: object) {
+    const replies = await this.replyService.getRepliesOfTwiddit(twidditId);
+    return replies.length;
+  }
+
+  @Get('/replies-reply/:replyId')
+  async getRepliesOfReply(@Param('replyId') replyId: object) {
+    const replies = await this.replyService.getRepliesOfReply(replyId);
+    return replies;
+  }
+
+  @Get('/number-replies-reply/:replyId')
+  async getNumberRepliesOfReply(@Param('replyId') replyId: object) {
+    const replies = await this.replyService.getRepliesOfReply(replyId);
+    return replies.length;
+  }
+
   @Post('/')
   async createReply(@Body() createReplyDTO: CreateReplyDTO) {
     const replyCreated = await this.replyService.createReply(createReplyDTO);

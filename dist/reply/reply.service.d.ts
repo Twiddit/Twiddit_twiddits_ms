@@ -40,4 +40,10 @@ export declare class ReplyService {
     updateReply(replyId: string, updateReplyDTO: UpdateReplyDTO): Promise<import("mongoose").Document<unknown, {}, Reply> & Omit<Reply & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;
+    getRepliesOfTwiddit(twidditid: object): Promise<(import("mongoose").Document<unknown, {}, Reply> & Omit<Reply & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getRepliesOfReply(replyid: object): Promise<(import("mongoose").Document<unknown, {}, Reply> & Omit<Reply & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
 }

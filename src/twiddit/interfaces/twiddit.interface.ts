@@ -4,7 +4,7 @@ import { Document } from 'mongoose';
 
 export interface Twiddit extends Document {
   userId: number;
-  comunnidditsId?: object;
+  communidditsId?: object;
   retwidditId?: object;
   text?: string;
   creationDate: Date;

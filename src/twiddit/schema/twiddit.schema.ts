@@ -7,7 +7,7 @@ export const TwidditsSchema = new Schema({
     type: Number,
     required: true,
   },
-  comunnidditsId: Object,
+  communidditsId: Object,
   retwidditId: Object,
   text: String,
   creationDate: {

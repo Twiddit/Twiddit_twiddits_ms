@@ -31,6 +31,14 @@ export declare class ReplyController {
     constructor(replyService: ReplyService);
     getReplies(): Promise<import("./interfaces/reply.interface").Reply[]>;
     getReply(replyId: string): Promise<import("./interfaces/reply.interface").Reply>;
+    getRepliesOfTwiddit(twidditId: object): Promise<(import("mongoose").Document<unknown, {}, import("./interfaces/reply.interface").Reply> & Omit<import("./interfaces/reply.interface").Reply & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberRepliesOfTwiddit(twidditId: object): Promise<number>;
+    getRepliesOfReply(replyId: object): Promise<(import("mongoose").Document<unknown, {}, import("./interfaces/reply.interface").Reply> & Omit<import("./interfaces/reply.interface").Reply & {
+        _id: import("mongoose").Types.ObjectId;
+    }, never>)[]>;
+    getNumberRepliesOfReply(replyId: object): Promise<number>;
     createReply(createReplyDTO: CreateReplyDTO): Promise<import("mongoose").Document<unknown, {}, import("./interfaces/reply.interface").Reply> & Omit<import("./interfaces/reply.interface").Reply & {
         _id: import("mongoose").Types.ObjectId;
     }, never>>;
