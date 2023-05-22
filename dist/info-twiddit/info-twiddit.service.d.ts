@@ -9,7 +9,7 @@ export declare class InfoTwidditService {
     private likeModel;
     private dislikeModel;
     constructor(twidditModel: Model<Twiddit>, replyModel: Model<Reply>, likeModel: Model<Like>, dislikeModel: Model<Dislike>);
-    getInfoTwiddits(twidditid: object): Promise<{
+    getInfoTwiddits(twidditid: any): Promise<{
         originalTwiddit: {};
         twiddit: import("mongoose").Document<unknown, {}, Twiddit> & Omit<Twiddit & {
             _id: import("mongoose").Types.ObjectId;

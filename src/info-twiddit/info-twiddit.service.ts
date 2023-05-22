@@ -15,7 +15,7 @@ export class InfoTwidditService {
     @InjectModel('Dislike') private dislikeModel: Model<Dislike>,
   ) {}
 
-  async getInfoTwiddits(twidditid: object) {
+  async getInfoTwiddits(twidditid: any) {
     const twiddit = await this.twidditModel.findById(twidditid);
     const replies = await this.replyModel.find({ twidditId: twidditid });
     const like = await this.likeModel.find({ twidditId: twidditid });
@@ -62,7 +62,7 @@ export class InfoTwidditService {
     }
 
     for (const i in twiddits) {
-      const toPush = await this.getInfoTwiddits(twiddits[i]._id);
+      const toPush = await this.getInfoTwiddits(twiddits[i]._id.toString());
       userTwiddits.push(toPush);
     }
 
@@ -83,7 +83,7 @@ export class InfoTwidditService {
     }
 
     for (const i in twiddits) {
-      const toPush = await this.getInfoTwiddits(twiddits[i]._id);
+      const toPush = await this.getInfoTwiddits(twiddits[i]._id.toString());
       communidditTwiddits.push(toPush);
     }
 
@@ -104,7 +104,7 @@ export class InfoTwidditService {
     }
 
     for (const i in twiddits) {
-      const toPush = await this.getInfoTwiddits(twiddits[i]._id);
+      const toPush = await this.getInfoTwiddits(twiddits[i]._id.toString());
       twidditsTag.push(toPush);
     }
 

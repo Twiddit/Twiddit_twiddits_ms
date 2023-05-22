@@ -48,7 +48,7 @@ let InfoTwidditService = class InfoTwidditService {
             throw new common_1.HttpException(`Twiddits not found for user ${userid} id`, common_1.HttpStatus.NOT_FOUND);
         }
         for (const i in twiddits) {
-            const toPush = await this.getInfoTwiddits(twiddits[i]._id);
+            const toPush = await this.getInfoTwiddits(twiddits[i]._id.toString());
             userTwiddits.push(toPush);
         }
         return userTwiddits;
@@ -62,7 +62,7 @@ let InfoTwidditService = class InfoTwidditService {
             throw new common_1.HttpException(`Twiddits not found for communiddit ${communidditid} id`, common_1.HttpStatus.NOT_FOUND);
         }
         for (const i in twiddits) {
-            const toPush = await this.getInfoTwiddits(twiddits[i]._id);
+            const toPush = await this.getInfoTwiddits(twiddits[i]._id.toString());
             communidditTwiddits.push(toPush);
         }
         return communidditTwiddits;
@@ -76,7 +76,7 @@ let InfoTwidditService = class InfoTwidditService {
             throw new common_1.HttpException(`Twiddits not found for tag: ${tag}`, common_1.HttpStatus.NOT_FOUND);
         }
         for (const i in twiddits) {
-            const toPush = await this.getInfoTwiddits(twiddits[i]._id);
+            const toPush = await this.getInfoTwiddits(twiddits[i]._id.toString());
             twidditsTag.push(toPush);
         }
         return twidditsTag;
