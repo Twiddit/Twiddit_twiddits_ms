@@ -13,7 +13,7 @@ spec:
         app: twiddits-ms
     spec:
       containers:
-        - name: twiddits_ms
+        - name: twiddits-ms
           image: nrinconv/twiddits-ms
           ports:
             - containerPort: 8080
