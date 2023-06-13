@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: twiddits_ms
-          image: nrinconv/twiddits_ms
+          image: nrinconv/twiddits-ms
           ports:
             - containerPort: 8080
 
