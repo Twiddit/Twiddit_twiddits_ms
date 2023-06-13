@@ -17,16 +17,19 @@ export class InfoTwidditService {
 
   async getInfoTwiddits(twidditid: any) {
     const twiddit = await this.twidditModel.findById(twidditid);
+    console.log(Object.getOwnPropertyNames(twiddit));
     const replies = await this.replyModel.find({ twidditId: twidditid });
     const like = await this.likeModel.find({ twidditId: twidditid });
     const dislike = await this.dislikeModel.find({ twidditId: twidditid });
     let isRetwiddit = false;
     let originalTwiddit = {};
 
-    if (twiddit.hasOwnProperty('retwidditId')) {
+    /* if (twiddit.hasOwnProperty('retwidditId')) {
       isRetwiddit = true;
-      originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId);
-    }
+      originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId.toString());
+    } */
+    isRetwiddit = true;
+    originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId);
 
     const infoTwiddit = {
       twiddit,

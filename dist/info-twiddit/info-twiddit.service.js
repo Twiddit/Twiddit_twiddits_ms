@@ -25,15 +25,14 @@ let InfoTwidditService = class InfoTwidditService {
     }
     async getInfoTwiddits(twidditid) {
         const twiddit = await this.twidditModel.findById(twidditid);
+        console.log(Object.getOwnPropertyNames(twiddit));
         const replies = await this.replyModel.find({ twidditId: twidditid });
         const like = await this.likeModel.find({ twidditId: twidditid });
         const dislike = await this.dislikeModel.find({ twidditId: twidditid });
         let isRetwiddit = false;
         let originalTwiddit = {};
-        if (twiddit.hasOwnProperty('retwidditId')) {
-            isRetwiddit = true;
-            originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId);
-        }
+        isRetwiddit = true;
+        originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId);
         const infoTwiddit = Object.assign({ twiddit, number_of_replies: replies.length, replies, number_of_likes: like.length, like, number_of_dislikes: dislike.length, dislike,
             isRetwiddit }, (isRetwiddit && { originalTwiddit }));
         if (twiddit === null) {

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: twiddits_ms
+spec:
+  selector:
+    app: twiddits_ms
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: NodePort
+status:
+  loadBalancer: {}

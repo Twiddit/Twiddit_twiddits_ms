@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: twiddits_ms
+spec:
+  selector:
+    matchLabels:
+      app: twiddits_ms
+  replicas: 1
+  template:
+    metadata:
+      labels: 
+        app: twiddits_ms
+    spec:
+      containers:
+        - name: twiddits_ms
+          image: nrinconv/twiddits_ms
+          ports:
+            - containerPort: 8080
+
