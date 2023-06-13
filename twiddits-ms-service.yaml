@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: twiddits_ms
+  name: twiddits-ms
 spec:
   selector:
-    app: twiddits_ms
+    app: twiddits-ms
   ports:
   - protocol: TCP
     port: 8080

@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: twiddits_ms
+  name: twiddits-ms
 spec:
   selector:
     matchLabels:
-      app: twiddits_ms
+      app: twiddits-ms
   replicas: 1
   template:
     metadata:
       labels: 
-        app: twiddits_ms
+        app: twiddits-ms
     spec:
       containers:
         - name: twiddits_ms
