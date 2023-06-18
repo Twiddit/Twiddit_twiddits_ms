@@ -25,7 +25,7 @@ AppModule = __decorate([
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
             }),
-            mongoose_1.MongooseModule.forRoot('mongodb+srv://twiddits:hQ65ugUrX4SbLo5U@twiddits.dwb0sl7.mongodb.net/Twiddit_twiddits_db?retryWrites=true&w=majority'),
+            mongoose_1.MongooseModule.forRoot('mongodb://twiddit:12345@34.81.212.38:27017/twiddits?authSource=admin'),
             twiddit_module_1.TwidditModule,
             like_module_1.LikeModule,
             dislike_module_1.DislikeModule,

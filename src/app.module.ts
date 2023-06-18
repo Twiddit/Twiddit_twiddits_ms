@@ -20,7 +20,7 @@ import { InfoTwidditModule } from './info-twiddit/info-twiddit.module';
       isGlobal: true,
     }),
     MongooseModule.forRoot(
-      'mongodb+srv://twiddits:hQ65ugUrX4SbLo5U@twiddits.dwb0sl7.mongodb.net/Twiddit_twiddits_db?retryWrites=true&w=majority',
+      'mongodb://twiddit:12345@34.81.212.38:27017/twiddits?authSource=admin',
     ),
     TwidditModule,
     LikeModule,
