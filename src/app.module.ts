@@ -19,7 +19,9 @@ import { InfoTwidditModule } from './info-twiddit/info-twiddit.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    MongooseModule.forRoot('mongodb://twiddit:12345@10.0.1.6:27017/?directConnection=true'),
+    MongooseModule.forRoot(
+      'mongodb://twiddit:12345@10.0.1.6:27017/twiddits?directConnection=true',
+    ),
     TwidditModule,
     LikeModule,
     DislikeModule,
