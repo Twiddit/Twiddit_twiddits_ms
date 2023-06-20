@@ -31,8 +31,10 @@ let InfoTwidditService = class InfoTwidditService {
         const dislike = await this.dislikeModel.find({ twidditId: twidditid });
         let isRetwiddit = false;
         let originalTwiddit = {};
-        isRetwiddit = true;
-        originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId);
+        if (twiddit.hasOwnProperty('retwidditId')) {
+            isRetwiddit = true;
+            originalTwiddit = await this.getInfoTwiddits(twiddit.retwidditId.toString());
+        }
         const infoTwiddit = Object.assign({ twiddit, number_of_replies: replies.length, replies, number_of_likes: like.length, like, number_of_dislikes: dislike.length, dislike,
             isRetwiddit }, (isRetwiddit && { originalTwiddit }));
         if (twiddit === null) {
